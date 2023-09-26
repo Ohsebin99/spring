@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.thjoeun.springDI_xml_constructor.student&apos; to &apos;Student&apos;&#x0D;&#x0A;- Original project: &apos;k20230717_3_springDI_xml_constructor&apos;&#x0D;&#x0A;- Original element: &apos;com.thjoeun.springDI_xml_constructor.student&apos;&#x0D;&#x0A;- Renamed element: &apos;com.thjoeun.springDI_xml_constructor.Student&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;student&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.thjoeun.springDI_xml_constructor{student.java[student" matchStrategy="1" name="Student" qualified="false" references="true" similarDeclarations="false" stamp="1689572201868" textual="false" version="1.0"/>
+</session>

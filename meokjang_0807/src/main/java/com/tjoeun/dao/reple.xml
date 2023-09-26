@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjoeun.dao.RepleDAO">
+
+<!-- insert -->
+
+   <!-- 회원정보 DB에 저장하기 -->
+   <insert id="repleInsert" parameterType="ro">
+		insert into reple (repleIdx, originIdx, masterID, repleID, reple, repleIp, fix, repleNickName, repleGender, repleAge, repleLimitNum) 
+		values (reple_idx_seq.nextval, #{originIdx}, #{masterID}, #{repleID}, #{reple}, #{repleIp}, #{fix}, #{repleNickName}, #{repleGender}, #{repleAge}, #{repleLimitNum})
+   </insert>
+    
+<!-- update -->
+   <update id="updateJoin" parameterType="int">
+   		update reple set fix = 'Y' where repleIdx = #{repleIdx}
+   </update>
+   
+<!-- delete -->
+   <delete id="deleteJoin" parameterType="int">
+   		delete from reple where repleIdx = #{repleIdx}
+   </delete>
+   
+<!-- select -->
+   <select id="selectRepleList" parameterType="int" resultType="ro">
+         select * from reple where originIdx = #{originIdx} order by repleIdx desc
+   </select>
+   
+   <select id="selectByRepleID" parameterType="String" resultType="ro">
+         select DISTINCT * from reple where repleID = #{repleID} order by repleIdx desc
+   </select>
+   
+   <select id="getFixList" parameterType="String" resultType="ro">
+         select DISTINCT * from reple where repleID = #{repleID} order by repleIdx desc
+   </select>
+   
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

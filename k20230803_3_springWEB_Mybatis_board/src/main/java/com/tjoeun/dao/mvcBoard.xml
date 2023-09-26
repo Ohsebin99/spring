@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjoeun.dao.MyBatisDAO">
+
+	<!-- 메인글 저장 -->
+   <insert id="insert" parameterType="vo">
+   		insert into mvcboard (idx, name, subject, content, gup, lev, seq)
+   		values (mvcboard_idx_seq.nextval, #{name}, #{subject}, #{content}, mvcboard_idx_seq.currval, 0, 0)
+   </insert>
+   
+   <!-- 전체 글의 개수를 얻어온다. -->
+	<select id="selectCount" resultType="int">
+   			select count(*) from mvcboard
+  	</select> 
+  	
+  	<!-- 1페이지 분량의 글 목록을 얻어온다. -->
+  	<select id="selectList" parameterType="java.util.HashMap" resultType="vo">
+   		<!-- 
+   		<![CDATA[
+   		select * from (
+   			select rownum rnum, GG.* from (
+   				select * from mvcboard order by idx desc
+   			)GG where rownum <= #{endNo}
+   		) where rnum >= #{startNo}
+   		]]>
+   		-->
+   		select * from (
+   			select rownum rnum, GG.* from (
+   				select * from mvcboard order by idx desc
+   			)GG
+   		) where rnum between  #{startNo} and #{endNo}
+   </select>
+   
+   <update id="increment" parameterType="int">
+   		update mvcboard set hit = hit + 1 where idx = #{idx}
+   </update>
+   
+   <select id="selectByIdx" parameterType="int" resultType="vo">
+		select * from mvcboard where idx = #{idx}
+	</select>
+   
+    <update id="update" parameterType="vo">
+   		update mvcboard set subject = #{subject}, content = #{content} where idx = #{idx}
+   </update>
+   
+   <delete id="delete" parameterType="int">
+		delete from mvcboard where idx = #{idx}
+	</delete>
+   
+   <update id="replyIncrement" parameterType="java.util.HashMap">
+   		update mvcboard set seq = seq + 1 where gup = #{gup} and seq >= #{seq}
+   </update>
+   
+   <insert id="replyInsert" parameterType="vo">
+   		insert into mvcboard (idx, name, subject, content, gup, lev, seq)
+   		values (mvcboard_idx_seq.nextval, #{name}, #{subject}, #{content}, #{gup}, #{lev}, #{seq})
+   </insert>
+   
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

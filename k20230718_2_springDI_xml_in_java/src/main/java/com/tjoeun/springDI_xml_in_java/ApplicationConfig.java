@@ -1,0 +1,40 @@
+package com.tjoeun.springDI_xml_in_java;
+
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration // 이 클래스는 DI 설정에 사용되는 클래스임을 spring에게 알려준다.
+public class ApplicationConfig {
+	
+	@Bean
+	public Student student2() {
+		ArrayList<String> hobbies = new ArrayList<String>();
+		hobbies.add("등산");
+		hobbies.add("바둑");
+		hobbies.add("낚시");
+		Student student = new Student("임꺽정", 25, hobbies);
+		student.setHeight(184);
+		student.setWeight(71);
+		
+		
+		return student; // 초기화된 bean 객체를 리턴시킨다.
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
