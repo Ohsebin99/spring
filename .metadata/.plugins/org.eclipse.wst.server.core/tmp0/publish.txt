@@ -1,5 +1,0 @@
-#Tomcat publish data
-#Fri Sep 22 12:05:49 KST 2023
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\TJ\\.m2\\repository\\org\\springframework\\spring-web\\3.2.5.RELEASE\\spring-web-3.2.5.RELEASE.jar=C\:\\k-digital\\spring\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\k20230802_5_springWEB_Security\\WEB-INF\\lib\\spring-web-3.2.5.RELEASE.jar
-org.eclipse.jst.jee.server\:k20230803_2_springWEB_Security4=C\:\\k-digital\\spring\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\k20230803_2_springWEB_Security4
-org.eclipse.jst.jee.server\:k20230802_5_springWEB_Security=C\:\\k-digital\\spring\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\k20230802_5_springWEB_Security
